@@ -1,0 +1,10 @@
+## Interface: 120000, 120001, 120005, 120007
+## Title: ChonkyBirb
+## Notes: Keep your birb chonky — per-spec resource bars
+## Author: Selph
+## Version: 1.0.0
+## SavedVariables: ChonkyBirbDB
+## X-Category: Combat
+
+embeds.xml
+ChonkyBirb.xml

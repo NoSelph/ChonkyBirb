@@ -1,0 +1,27 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="localization\enUS.lua"/>
+	<Script file="ChonkyBirb.lua"/>
+	<Script file="modules\helpers.lua"/>
+	<Script file="modules\text.lua"/>
+	<Script file="modules\registry.lua"/>
+	<Script file="modules\warrior.lua"/>
+	<Script file="modules\paladin.lua"/>
+	<Script file="modules\hunter.lua"/>
+	<Script file="modules\rogue.lua"/>
+	<Script file="modules\priest.lua"/>
+	<Script file="modules\deathknight.lua"/>
+	<Script file="modules\shaman.lua"/>
+	<Script file="modules\mage.lua"/>
+	<Script file="modules\warlock.lua"/>
+	<Script file="modules\monk.lua"/>
+	<Script file="modules\druid.lua"/>
+	<Script file="modules\demonhunter.lua"/>
+	<Script file="modules\evoker.lua"/>
+	<Script file="modules\resourcebar.lua"/>
+	<Script file="modules\barfactory.lua"/>
+	<Script file="modules\engine.lua"/>
+	<Script file="modules\blizzhide.lua"/>
+	<Script file="modules\visibility.lua"/>
+	<Script file="modules\config.lua"/>
+	<Script file="modules\mover.lua"/>
+</Ui>
