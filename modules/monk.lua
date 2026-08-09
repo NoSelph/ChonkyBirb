@@ -18,26 +18,31 @@ Chonk.Registry[10] = {
 	[3] = { D.power("energy", "Energy", PT.Energy, C.energy), D.seg("chi", "Chi", PT.Chi, C.chi, 5), D.health() },
 }
 
--- Brewmaster stagger: colour picked by which debuff is up (plain); the amount is secret in combat so it goes straight to SetValue.
--- Levels follow the thresholds: light <30%, moderate 30-60%, heavy >60% of max health.
-local STAGGER_HEAVY, STAGGER_MODERATE = 124273, 124274
-
+-- Brewmaster stagger levels by percent of max health, same thresholds the game uses (30% / 60%).
+-- The math only runs on plain numbers; when stagger goes secret the last level sticks.
 Chonk.StaggerColors = {
 	light    = { 0.34, 0.45, 0.30 },   -- #56734D
 	moderate = { 0.65, 0.58, 0.15 },   -- #A69425
 	heavy    = { 0.59, 0.15, 0.15 },   -- #962525
 }
 
+local HEAVY_AT    = (STAGGER_STATES and STAGGER_STATES.RED and STAGGER_STATES.RED.threshold) or 0.6
+local MODERATE_AT = (STAGGER_STATES and STAGGER_STATES.YELLOW and STAGGER_STATES.YELLOW.threshold) or 0.3
+
 Chonk.Sources.stagger = function(bar)
-	local level = "light"
-	if H.GetPlayerAura(STAGGER_HEAVY) then
-		level = "heavy"
-	elseif H.GetPlayerAura(STAGGER_MODERATE) then
-		level = "moderate"
+	local stagger = H.UnitStagger("player")
+	local maxHealth = H.UnitHealthMax("player")
+
+	local level = bar._staggerLevel or "light"
+	if H.IsUsableNumber(stagger) and H.IsUsableNumber(maxHealth) and maxHealth > 0 then
+		local pct = stagger / maxHealth
+		level = (pct >= HEAVY_AT and "heavy") or (pct >= MODERATE_AT and "moderate") or "light"
 	end
+	bar._staggerLevel = level
+
 	local sc = bar.cfg.staggerColors or Chonk.StaggerColors
 	local col = sc[level] or Chonk.StaggerColors[level]
 	bar.bar:SetStatusBarColor(col[1], col[2], col[3], col[4] or 1)
 
-	return H.UnitStagger("player"), H.UnitHealthMax("player")
+	return stagger, maxHealth
 end

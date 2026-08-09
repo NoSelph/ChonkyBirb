@@ -48,7 +48,8 @@ function Vis:RefreshContext()
 
 	ctx.inFlock = IsInGroup()
 	ctx.inBigFlock = IsInRaid()
-	ctx.pvpRuffled = UnitIsPVP("player") or false
+	local okV, pvp = pcall(UnitIsPVP, "player")
+	ctx.pvpRuffled = (okV and pvp) or false
 	ctx.warMode = (C_PvP and C_PvP.IsWarModeActive and C_PvP.IsWarModeActive()) or false
 
 	-- Plain return; keep the last good value if the token doesn't resolve.
