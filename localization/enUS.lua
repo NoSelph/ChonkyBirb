@@ -135,7 +135,6 @@ L["Top to Bottom"] = true
 
 -- Font outline / shadow
 L["None"] = true
-L["Outline"] = true
 L["Thick Outline"] = true
 L["Shadow"] = true
 L["Shadow Color"] = true

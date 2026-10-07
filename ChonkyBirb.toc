@@ -1,7 +1,14 @@
-## Interface: 120000, 120001, 120005, 120007, 120100
+## Interface: 120000, 120001, 120005, 120007, 120100, 120105
 ## Title: ChonkyBirb
 ## Notes: Keep your birb chonky — per-spec resource bars
-## Notes-zhCN: 各专精资源条，施法预测、百分比变色、条件显隐等。
+## Notes-deDE: Ressourcenleisten pro Spezialisierung, Zaubervorhersage, Färbung nach Prozent, bedingte Sichtbarkeit.
+## Notes-esES: Barras de recursos por especialización: predicción de lanzamiento, color por porcentaje, visibilidad condicional.
+## Notes-esMX: Barras de recursos por especialización: predicción de lanzamiento, color por porcentaje, visibilidad condicional.
+## Notes-frFR: Barres de ressources par spécialisation : prédiction de sort, couleur par pourcentage, visibilité conditionnelle.
+## Notes-koKR: 전문화별 자원 바, 시전 예측, 백분율 색상, 조건부 표시.
+## Notes-ruRU: Полосы ресурсов для каждой специализации: прогноз заклинаний, цвет по проценту, условное отображение.
+## Notes-zhCN: 各专精资源条，施法预演、百分比变色、条件显隐等。
+## Notes-zhTW: 各專精資源條，施法預測、百分比變色、條件顯隱。
 ## Author: Selph
 ## Version: 1.0.1
 ## SavedVariables: ChonkyBirbDB
